@@ -1,0 +1,93 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodeIt-Admin-Home</title>
+  <link rel="stylesheet" href="{% static 'w3/w3css.css' %}">
+
+  <script type="text/javascript" src="{% static 'jquery/3.2.js' %}"></script>
+  <!-- <link rel="stylesheet" href="../stylesheets/materialIcons.css"> -->
+  <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.css' %}">
+  <!-- <link href='../stylesheets/fonts.css' rel='stylesheet' type='text/css'> -->
+  <link rel="stylesheet" href="{% static '/admin/css/style.css' %}">
+
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse" style="background:#323754;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Codeit</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Admin-Problem Statements</a></li>
+        <li><a href="{% url 'create_new' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add New Problem</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="w3-row">
+    <div class="w3-col m4 l4 ">
+      <div class="w3-container">
+        <div class="w3-card-4">
+
+          <header class="w3-container w3-light-grey">
+            <h4>Manage users</h4>
+          </header>
+
+          <div class="w3-container">
+            <p><a href="ImportUsers.php">Import Users from Excel file</a></p>
+            <hr>
+            <p><a href="">Manage User data</a></p>
+            <hr>
+            <p><a href="">Analyse Score</a></p>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m8 l8">
+      <div class="w3-container">
+        <div class="w3-card-4" id="pbStats">
+
+          <header class="w3-container w3-light-grey">
+            <h4>Problem Statements</h4>
+          </header>
+
+          <div class="w3-container">
+            <ul class="collapsible popout" data-collapsible="accordion">
+              {% for attr in codeData %}
+              <li class=''>
+                <div class='collapsible-header'> {{ attr.pbName }}<a class='solvebtn' style='float:right;' href='{% url "updateCode" attr.id %} '>  EDIT  </a><a class='solvebtn' style='float:right;' href='{% url "deletePb" attr.id  %}'>&nbsp;&nbsp;DELETE&nbsp;&nbsp;  </a></div>
+                <div class='collapsible-body' style=''>
+                  <p>{{ attr.pbStat }}</p>
+
+                </div>
+              </li>
+              {% endfor %}
+
+            </ul>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="{% static 'admin/js/index.js' %}"></script>
+
+</body>
+
+</html>
