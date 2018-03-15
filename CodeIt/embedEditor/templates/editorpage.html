@@ -3,11 +3,10 @@
 <html lang="en">
 
 <head>
-  <title>CodeIt-{{ data.pbName }}
-
-  </title>
+  <title>CodeIt-{{ data.pbName }}</title>
   <link rel="stylesheet" href="{% static 'BS4/assets/css/material-kit.css' %}">
   <!--   Core JS Files   -->
+
   <script src="{% static 'jquery/3.2.js' %}" charset="utf-8"></script>
   <script src="{% static 'BS4/assets/js/core/popper.min.js' %}"></script>
   <script src="{% static 'BS4/assets/js/bootstrap-material-design.js' %}"></script>
@@ -273,7 +272,9 @@
 
     <div style="margin:0px;padding:0px;">
     <div class="card" style="margin:0px;background:#002b36;" id="EditorCard">
-      <div id="error"></div>
+      <div id="error">
+
+      </div>
 
     <div class="card-body" style="padding:0px;">
 
@@ -364,6 +365,7 @@
       editorheader.getSession().setMode("ace/mode/c_cpp");
       editorheader.setShowPrintMargin(false);
       editorheader.resize();
+      editorheader.setReadOnly(true);
       document.getElementById('editor1').style.fontSize = '17px';
       editorheader.setHighlightActiveLine(false);
       editorheader.getSession().setUseSoftTabs(true);
@@ -387,24 +389,28 @@
       }
     });
 
-          $('#compileBtn').on('click', function() {
-            var code = editor.getValue();
-            $(this).addClass("running");
-            $.ajax({
-              type: "POST",
-              url: "processCompile.php?id=<?php echo $pbid;?> ",
-              cache: false,
-              data: {
-                codeData: code
-              },
-              success: function(data, status) {
-                $('#compileBtn').removeClass("running");
-                testcaseExaminer(data);
-              }
-            });
+    $('#compileBtn').on('click', function() {
+      $(this).addClass("running");
+      var codeHeader = editorheader.getValue();
 
-          });
-  
+      var codeMain = editor.getValue();
+      $.ajax({
+        type: "get",
+        url: "getmyOutput"+{{ data.id }},
+        cache: false,
+        data: {
+          codeHeader: codeHeader,
+          codeMain: codeMain,
+        },
+        success: function(data, status) {
+          $('#compileBtn').removeClass("running");
+          testcaseExaminer(data);
+
+        }
+      });
+
+    });
+
     $('#languageSelector').on("click", 'a', function() {
       var lng = $(this).attr('value');
       editor.getSession().setMode("ace/mode/" + lng);

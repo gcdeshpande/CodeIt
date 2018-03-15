@@ -1,0 +1,183 @@
+
+@import url(https://fonts.googleapis.com/css?family=Jaldi:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900);
+
+body {
+    background:#45362E none repeat scroll 0 0;
+    color: #fff;
+    font-family: "Jaldi",sans-serif;
+    font-size: 100%;
+    line-height: 1.25;
+    margin: 0;
+	padding:0;
+}
+a {
+	font-family: 'Jaldi', sans-serif;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover, a:focus {
+	color: #373e18;
+}
+
+.text-center{
+	text-align:center;	
+}
+
+
+.codeconveyHeader {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.codeconveyHeader h1 {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+    margin: 50px 0 40px;
+}
+
+.codeconveyHeader h1 span {
+	display: block;
+	padding: 0 0 0.6em 0.1em;
+	font-size: 0.6em;
+	opacity: 0.7;
+}
+
+/* To Navigation Style */
+.codeconveyTop {
+    font-size: 0.69em;
+    font-weight: 600;
+    line-height: 2.2;
+    text-transform: uppercase;
+    width: 100%;
+}
+.codeconveyTop ul{
+	margin:0;
+	padding:0;	
+	text-align:center;
+}
+.codeconveyTop li{
+	list-style:none;	
+	display:inline-block;
+}
+.codeconveyTop li a {
+	display: inline-block;
+	padding: 0 1em;
+	text-decoration: none;
+	color:#fff;
+	font-size:15px;
+}
+
+.codeconveyTop span.right {
+	float: right;
+}
+
+.codeconveyTop span.right a {
+	display: block;
+	float: left;
+	color:#fff;
+}
+.codeconveyDemos a,
+section button {
+	display: inline-block;
+	background: #a9a9a9;
+	color: #fff;
+	font-weight: 400;
+	padding: 10px 20px;
+	margin: 5px;
+	text-transform: uppercase;
+	border-radius: 2px;
+	letter-spacing: 1px;
+}
+
+.codeconveyDemos a:hover,
+.codeconveyDemos a:active,
+.codeconveyDemos a.current-demo {
+	background: #777;
+}
+
+section {
+	color:#fff;
+	padding: 1em 2em 5em;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+section p {
+	color:#fff;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+section button {
+	border: none;
+	padding: 15px 30px;
+	outline: none;
+	background: #85b91e;
+}
+
+.content {
+    font-family: "Lato","Avenir Next",Arial,sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: normal;
+}
+
+
+/* Related Items*/
+.related > a {
+	border: 1px solid #99cc33;
+	display: inline-block;
+	text-align: center;
+	margin: 20px 10px;
+	padding: 25px;
+	color: #99cc33;
+	opacity: 0.8;
+	-webkit-transition: color 0.3s, border-color 0.3s;
+	transition: color 0.3s, border-color 0.3s;
+	-webkit-backface-visibility: hidden;
+}
+
+.related a:hover {
+	border-color: #82b222;
+	color: #82b222;
+}
+
+.related a img {
+	max-width: 100%;
+}
+
+.related a h3 {
+	margin: 0;
+	padding: 0.5em 0 0.3em;
+	max-width: 300px;
+	text-align: left;
+	font-size: 65%;
+	font-weight: 400;
+}
+
+.codecontainer {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .codecontainer {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .codecontainer {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .codecontainer {
+    width: 1170px;
+  }
+}
+

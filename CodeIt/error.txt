@@ -1,0 +1,4 @@
+test.c: In function ‘disp’:
+test.c:8:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^

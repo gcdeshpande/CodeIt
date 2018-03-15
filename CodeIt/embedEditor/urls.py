@@ -18,4 +18,5 @@ from embedEditor import views
 urlpatterns = [
     url(r'^solve(?P<pk>\d+)$',views.init_data,name='init_data'),
     url(r'^getCodeData$',views.getCodeData,name='getCodeData'),
+    url(r'^getmyOutput(?P<pk>\d+)$',views.getmyOutput,name='getmyOutput'),
 ]

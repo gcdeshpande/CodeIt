@@ -1,10 +1,8 @@
 #include<stdio.h>
-void newd();
-int main(){
-    newd();
-    return 0;
+void disp();
+void main(){
+    printf("Hello\nWhat");
+    disp();
+}void disp(){
+    printf("\nHi")
 }
-        void newd(){
-    printf("newd");
-}
-        
